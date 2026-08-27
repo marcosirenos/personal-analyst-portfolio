@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, useEffect } from 'react';
+import Link from 'next/link';
 
 const experiences = [
   {
@@ -76,6 +77,7 @@ export default function Home() {
           <a href="#work">Work</a>
           <a href="#about">About</a>
           <a href="#journey">Journey</a>
+          <Link href="/blog">Blog</Link>
           <a className="nav-cta" href="#contact">Let&apos;s talk <span aria-hidden="true">↗</span></a>
         </div>
       </nav>
