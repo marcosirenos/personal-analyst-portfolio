@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('http://localhost:3000'),
+  metadataBase: new URL('https://marcos-krunn.marcos-irenos.chatgpt.site'),
   title: 'Marcos Krunn — Analytics Engineer',
   description: 'Analytics engineer building trusted data systems, sharp dashboards, and useful software.',
   openGraph: {
