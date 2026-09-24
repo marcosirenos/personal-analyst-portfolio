@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   if (!post) return {};
 
   return {
-    title: `${post.title} — Marcos Krunn`,
+    title: `${post.title} — Marcos Irenos`,
     description: post.excerpt,
     openGraph: { title: post.title, description: post.excerpt, type: 'article', publishedTime: post.date, tags: post.tags },
   };
@@ -30,8 +30,11 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <main className="article-shell">
       <header className="blog-nav">
-        <Link className="wordmark" href="/">MK<span>.</span></Link>
-        <Link className="back-link" href="/blog">← All notes</Link>
+        <Link className="wordmark" href="/">MI<span>.</span></Link>
+        <div className="blog-nav-actions">
+          <div className="language-switch" aria-label="Select language"><span className="is-active">PT</span><span>/</span><Link href={`/en/blog/${post.slug}`}>EN</Link></div>
+          <Link className="back-link" href="/blog">← All notes</Link>
+        </div>
       </header>
       <article className="article-page">
         <div className="article-meta">

@@ -72,7 +72,7 @@ export default function Home() {
     <main className="site-shell">
       <a className="skip-link" href="#content">Skip to content</a>
       <nav className="nav-shell" aria-label="Primary navigation">
-        <a className="wordmark" href="#top" aria-label="Marcos Krunn — home">MK<span>.</span></a>
+        <a className="wordmark" href="#top" aria-label="Marcos Irenos — home">MI<span>.</span></a>
         <div className="nav-links">
           <a href="#work">Work</a>
           <a href="#about">About</a>
@@ -90,7 +90,7 @@ export default function Home() {
             <p className="eyebrow"><span /> Available for ambitious data projects</p>
             <h1>I turn messy data into<em> clear momentum.</em></h1>
             <p className="hero-lede">
-              I&apos;m Marcos Krunn, an Analytics Engineer building trustworthy data systems,
+              I&apos;m Marcos Irenos, an Analytics Engineer building trustworthy data systems,
               sharp dashboards, and software that helps people move faster.
             </p>
             <div className="hero-actions">
@@ -204,7 +204,7 @@ export default function Home() {
           <blockquote data-reveal>
             “Technology exists to serve people. The best data work makes the complex feel <em>inevitable.</em>”
           </blockquote>
-          <p className="signature" data-reveal>— MARCOS KRUNN</p>
+          <p className="signature" data-reveal>— MARCOS IRENOS</p>
         </section>
 
         <section className="contact" id="contact">
@@ -230,8 +230,8 @@ export default function Home() {
       </div>
 
       <footer>
-        <a className="wordmark" href="#top">MK<span>.</span></a>
-        <p>© 2026 MARCOS KRUNN · BUILT WITH INTENTION</p>
+        <a className="wordmark" href="#top">MI<span>.</span></a>
+        <p>© 2026 MARCOS IRENOS · BUILT WITH INTENTION</p>
         <a href="#top">BACK TO TOP ↑</a>
       </footer>
     </main>

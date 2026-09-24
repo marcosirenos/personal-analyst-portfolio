@@ -13,6 +13,7 @@ export type Post = {
   excerpt: string;
   readingTime: string;
   content: string;
+  locale: string;
 };
 
 function asString(value: unknown, fallback = '') {
@@ -35,6 +36,7 @@ function postFromFile(filename: string): Post {
     excerpt: asString(parsed.data.excerpt),
     readingTime: asString(parsed.data.readingTime),
     content: parsed.content.trim(),
+    locale: asString(parsed.data.locale, 'en'),
   };
 }
 
@@ -50,6 +52,10 @@ export function getAllPosts() {
 
 export function getPostBySlug(slug: string) {
   return getAllPosts().find(post => post.slug === slug);
+}
+
+export function getPostsByLocale(locale: string) {
+  return getAllPosts().filter(post => post.locale === locale);
 }
 
 export async function markdownToHtml(markdown: string) {

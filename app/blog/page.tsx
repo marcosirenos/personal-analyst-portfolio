@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { getAllPosts } from '@/lib/posts';
 
 export const metadata: Metadata = {
-  title: 'Writing — Marcos Krunn',
-  description: 'Notes on analytics engineering, data products, and useful software by Marcos Krunn.',
+  title: 'Writing — Marcos Irenos',
+  description: 'Notes on analytics engineering, data products, and useful software by Marcos Irenos.',
 };
 
 export default function BlogPage() {
@@ -13,8 +13,11 @@ export default function BlogPage() {
   return (
     <main className="blog-shell">
       <header className="blog-nav">
-        <Link className="wordmark" href="/">MK<span>.</span></Link>
-        <Link className="back-link" href="/">← Back to portfolio</Link>
+        <Link className="wordmark" href="/">MI<span>.</span></Link>
+        <div className="blog-nav-actions">
+          <div className="language-switch" aria-label="Select language"><span className="is-active">PT</span><span>/</span><Link href="/en/blog">EN</Link></div>
+          <Link className="back-link" href="/">← Back to portfolio</Link>
+        </div>
       </header>
 
       <section className="blog-hero">
@@ -45,7 +48,7 @@ export default function BlogPage() {
       </section>
 
       <footer className="blog-footer">
-        <Link className="wordmark" href="/">MK<span>.</span></Link>
+        <Link className="wordmark" href="/">MI<span>.</span></Link>
         <span>Markdown-powered notes · 2026</span>
         <a href="mailto:marcosaureliokrunn@gmail.com">Let&apos;s talk ↗</a>
       </footer>
