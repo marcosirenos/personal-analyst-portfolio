@@ -1,5 +1,1 @@
-import { redirect } from 'next/navigation';
-
-export default function BlogRedirect() {
-  redirect('/en/blog');
-}
+export { metadata, default } from '../en/blog/page';
