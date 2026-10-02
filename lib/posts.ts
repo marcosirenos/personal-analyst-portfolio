@@ -5,6 +5,8 @@ import { marked } from 'marked';
 
 const postsDirectory = path.join(process.cwd(), 'content', 'posts');
 
+export type PostLocale = 'pt' | 'en';
+
 export type Post = {
   slug: string;
   title: string;
@@ -13,7 +15,7 @@ export type Post = {
   excerpt: string;
   readingTime: string;
   content: string;
-  locale: string;
+  locale: PostLocale;
 };
 
 function asString(value: unknown, fallback = '') {
@@ -24,8 +26,8 @@ function asTags(value: unknown) {
   return Array.isArray(value) ? value.filter((tag): tag is string => typeof tag === 'string') : [];
 }
 
-function postFromFile(filename: string): Post {
-  const source = fs.readFileSync(path.join(postsDirectory, filename), 'utf8');
+function postFromFile(locale: PostLocale, filename: string): Post {
+  const source = fs.readFileSync(path.join(postsDirectory, locale, filename), 'utf8');
   const parsed = matter(source);
 
   return {
@@ -36,26 +38,24 @@ function postFromFile(filename: string): Post {
     excerpt: asString(parsed.data.excerpt),
     readingTime: asString(parsed.data.readingTime),
     content: parsed.content.trim(),
-    locale: asString(parsed.data.locale, 'en'),
+    locale,
   };
 }
 
-export function getAllPosts() {
-  if (!fs.existsSync(postsDirectory)) return [];
+// Posts live in content/posts/<locale>/<slug>.md; a translation shares the same slug.
+export function getPostsByLocale(locale: PostLocale) {
+  const directory = path.join(postsDirectory, locale);
+  if (!fs.existsSync(directory)) return [];
 
   return fs
-    .readdirSync(postsDirectory)
+    .readdirSync(directory)
     .filter(filename => /\.(md|mdx)$/.test(filename))
-    .map(postFromFile)
+    .map(filename => postFromFile(locale, filename))
     .sort((a, b) => b.date.localeCompare(a.date));
 }
 
-export function getPostBySlug(slug: string) {
-  return getAllPosts().find(post => post.slug === slug);
-}
-
-export function getPostsByLocale(locale: string) {
-  return getAllPosts().filter(post => post.locale === locale);
+export function getPostBySlug(locale: PostLocale, slug: string) {
+  return getPostsByLocale(locale).find(post => post.slug === slug);
 }
 
 export async function markdownToHtml(markdown: string) {

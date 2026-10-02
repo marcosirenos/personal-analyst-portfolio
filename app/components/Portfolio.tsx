@@ -4,10 +4,10 @@ type Locale = 'pt' | 'en';
 
 const content = {
   pt: {
-    nav: { about: 'Sobre', work: 'Trabalho', experience: 'Experiência', writing: 'Artigos (EN)', contact: 'Contato' },
+    nav: { about: 'Sobre', work: 'Trabalho', experience: 'Experiência', writing: 'Artigos', contact: 'Contato' },
     switchLabel: 'Mudar idioma',
     intro: 'Engenheiro de analytics em Curitiba.',
-    bio: 'Trabalho com dados, relatórios e ferramentas internas. Hoje faço parte do time de Inteligência Financeira do Grupo RIC.',
+    bio: 'Trabalho com dados, relatórios e ferramentas internas. Hoje faço parte do time de Inteligência do Grupo RIC.',
     location: 'Curitiba, Brasil',
     availability: 'Dados · Sistemas · Software',
     aboutLabel: 'Sobre',
@@ -23,9 +23,9 @@ const content = {
     experienceLabel: 'Experiência',
     experienceTitle: 'Onde trabalhei',
     experiences: [
-      { period: '2024 — hoje', company: 'Grupo RIC', role: 'Analista de Dados Júnior · Inteligência Financeira' },
-      { period: '2023 — 2024', company: 'SLB OneSubsea', role: 'Estagiário de Qualidade de Fornecedores' },
-      { period: '2023', company: 'RM2 Intelligence Partner', role: 'Estagiário de Dados' },
+      { period: '2025 — hoje', company: 'Grupo RIC', role: 'Analytics Engineer · Inteligência' },
+      { period: '2024 — 2025', company: 'SLB OneSubsea', role: 'Estagiário de Qualidade de Fornecedores' },
+      { period: '2023 — 2024', company: 'RM2 Intelligence Partner', role: 'Estagiário de Dados' },
     ],
     education: 'Engenharia de Software · UNIBRASIL · 2023—2026',
     contactLabel: 'Contato',
@@ -40,7 +40,7 @@ const content = {
     nav: { about: 'About', work: 'Work', experience: 'Experience', writing: 'Writing', contact: 'Contact' },
     switchLabel: 'Change language',
     intro: 'Analytics engineer in Curitiba.',
-    bio: 'I work with data, reporting, and internal tools. I am currently part of the Financial Intelligence team at Grupo RIC.',
+    bio: 'I work with data, reporting, and internal tools. I am currently part of the Intelligence team at Grupo RIC.',
     location: 'Curitiba, Brazil',
     availability: 'Data · Systems · Software',
     aboutLabel: 'About',
@@ -56,9 +56,9 @@ const content = {
     experienceLabel: 'Experience',
     experienceTitle: 'Where I have worked',
     experiences: [
-      { period: '2024 — now', company: 'Grupo RIC', role: 'Junior Data Analyst · Financial Intelligence' },
-      { period: '2023 — 2024', company: 'SLB OneSubsea', role: 'Supplier Quality Intern' },
-      { period: '2023', company: 'RM2 Intelligence Partner', role: 'Data Intern' },
+      { period: '2025 — now', company: 'Grupo RIC', role: 'Analytics Engineer · Intelligence' },
+      { period: '2024 — 2025', company: 'SLB OneSubsea', role: 'Supplier Quality Intern' },
+      { period: '2023 — 2024', company: 'RM2 Intelligence Partner', role: 'Data Intern' },
     ],
     education: 'Software Engineering · UNIBRASIL · 2023—2026',
     contactLabel: 'Contact',
@@ -87,7 +87,7 @@ export function Portfolio({ locale }: { locale: Locale }) {
           <a href="#about">{copy.nav.about}</a>
           <a href="#work">{copy.nav.work}</a>
           <a href="#experience">{copy.nav.experience}</a>
-          <Link href="/en/blog">{copy.nav.writing}</Link>
+          <Link href={isEnglish ? '/en/blog' : '/blog'}>{copy.nav.writing}</Link>
         </nav>
         <div className="header-actions">
           <div className="language-switch" aria-label={copy.switchLabel}>

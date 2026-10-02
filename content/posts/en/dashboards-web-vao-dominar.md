@@ -4,7 +4,6 @@ date: "2026-08-27"
 tags: [Web Dashboards, Power BI, AI, Software Engineering]
 excerpt: "AI made impressive interfaces accessible. But a beautiful dashboard is still only the final layer of a data product."
 readingTime: "9 min read"
-locale: "en"
 ---
 
 # Will Web Dashboards Replace Power BI?
