@@ -13,12 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://irenos.vercel.app'),
+  metadataBase: new URL('https://marcos-krunn.marcos-irenos.chatgpt.site'),
   title: 'Marcos Irenos — Analytics Engineer',
-  description: 'Analytics engineer building trusted data systems, sharp dashboards, and useful software.',
+  description: 'Analytics engineer working with data, reporting, and internal tools in Curitiba, Brazil.',
   openGraph: {
     title: 'Marcos Irenos — Analytics Engineer',
-    description: 'I turn messy data into clear momentum.',
+    description: 'Analytics engineer working with data, reporting, and internal tools.',
     type: 'website',
     locale: 'en_US',
     images: [{ url: '/og.jpg', width: 1200, height: 630, alt: 'Marcos Irenos — Analytics Engineer' }],
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Marcos Irenos — Analytics Engineer',
-    description: 'I turn messy data into clear momentum.',
+    description: 'Analytics engineer working with data, reporting, and internal tools.',
     images: ['/og.jpg'],
   },
   icons: { icon: '/favicon.svg' },
@@ -38,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

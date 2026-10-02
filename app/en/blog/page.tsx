@@ -13,16 +13,16 @@ export default function EnglishBlogPage() {
   return (
     <main className="blog-shell">
       <header className="blog-nav">
-        <Link className="wordmark" href="/">MI<span>.</span></Link>
+        <Link className="wordmark" href="/en">Marcos Irenos</Link>
         <div className="blog-nav-actions">
-          <div className="language-switch" aria-label="Select language"><span className="is-active">EN</span><span>/</span><Link href="/blog">PT</Link></div>
-          <Link className="back-link" href="/">← Back to portfolio</Link>
+          <div className="language-switch" aria-label="Change language"><Link href="/" hrefLang="pt-BR">PT</Link><span>/</span><span className="is-active">EN</span></div>
+          <Link className="back-link" href="/en">Back to portfolio</Link>
         </div>
       </header>
       <section className="blog-hero">
-        <p className="section-kicker"><span>06</span> FIELD NOTES</p>
-        <h1>Thinking in<br /><em>public.</em></h1>
-        <p>Writing about analytics engineering, dashboards, and the decisions that make data useful.</p>
+        <p className="section-kicker"><span>01</span> Writing</p>
+        <h1>Notes on data and software.</h1>
+        <p>Things I have learned while building dashboards, data pipelines, and internal tools.</p>
       </section>
       <section className="post-list" aria-label="Blog posts">
         {posts.map(post => (
@@ -32,7 +32,7 @@ export default function EnglishBlogPage() {
           </article>
         ))}
       </section>
-      <footer className="blog-footer"><Link className="wordmark" href="/">MI<span>.</span></Link><span>English notes · 2026</span><a href="mailto:marcosaureliokrunn@gmail.com">Let&apos;s talk ↗</a></footer>
+      <footer className="blog-footer"><Link className="wordmark" href="/en">Marcos Irenos</Link><span>Writing · 2026</span><a href="mailto:marcosaureliokrunn@gmail.com">Email</a></footer>
     </main>
   );
 }
